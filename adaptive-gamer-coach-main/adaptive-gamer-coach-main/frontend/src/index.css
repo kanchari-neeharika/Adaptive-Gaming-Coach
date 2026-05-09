@@ -1,0 +1,161 @@
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── Hexagonal Background Texture ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cpath d='M30 0 L60 17.3 L60 52 L30 69.3 L0 52 L0 17.3Z' fill='none' stroke='%231e1e2e' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M30 34.7 L60 52 L60 86.6 L30 104 L0 86.6 L0 52Z' fill='none' stroke='%231e1e2e' stroke-width='0.5' opacity='0.4'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #12121a; }
+::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+/* ─── Neon Glow Utilities ─── */
+@layer utilities {
+  .neon-green {
+    box-shadow: 0 0 5px #00ff88, 0 0 20px #00ff8844;
+  }
+  .neon-red {
+    box-shadow: 0 0 5px #ff2d55, 0 0 20px #ff2d5544;
+  }
+  .neon-cyan {
+    box-shadow: 0 0 5px #00d4ff, 0 0 20px #00d4ff44;
+  }
+  .neon-purple {
+    box-shadow: 0 0 5px #7c3aed, 0 0 20px #7c3aed44;
+  }
+  .text-neon-green {
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff8888;
+  }
+  .text-neon-red {
+    color: #ff2d55;
+    text-shadow: 0 0 10px #ff2d5588;
+  }
+  .text-neon-cyan {
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff88;
+  }
+  .card {
+    background: #12121a;
+    border: 1px solid #1e1e2e;
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+  }
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .glitch-text::before {
+    color: #ff2d55;
+    animation: glitch-before 2s infinite;
+    clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+  }
+  .glitch-text::after {
+    color: #00d4ff;
+    animation: glitch-after 2s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  }
+  
+  .slider-thumb-green::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00ff88;
+    transition: box-shadow 0.2s;
+  }
+  .slider-thumb-green::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 16px #00ff88;
+  }
+  .slider-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #1e1e2e;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+@keyframes glitch-before {
+  0%, 90%, 100% { transform: translate(0); opacity: 0; }
+  92% { transform: translate(-3px, 0); opacity: 0.7; }
+  96% { transform: translate(3px, 0); opacity: 0.7; }
+}
+
+@keyframes glitch-after {
+  0%, 90%, 100% { transform: translate(0); opacity: 0; }
+  93% { transform: translate(3px, 0); opacity: 0.7; }
+  97% { transform: translate(-3px, 0); opacity: 0.7; }
+}
+
+/* ─── Focus visible for accessibility ─── */
+:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Loading animation ─── */
+@keyframes hex-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+.hex-loader {
+  animation: hex-pulse 1s ease-in-out infinite;
+}
+
+/* ─── Stagger animation classes ─── */
+.animate-in {
+  animation: slide-up 0.4s ease-out both;
+}
+.delay-1 { animation-delay: 150ms; }
+.delay-2 { animation-delay: 300ms; }
+.delay-3 { animation-delay: 450ms; }
+.delay-4 { animation-delay: 600ms; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
