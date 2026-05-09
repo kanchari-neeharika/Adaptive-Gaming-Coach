@@ -1,74 +1,349 @@
-# ⚡ Adaptive Gamer Coaching System
-### Behavioral Intelligence for Gamers | Review 3 submission
+**OBJECTIVE**
 
-A high-tech dashboard that predicts **Rage-Quit Risk** and **Gaming Addiction** using Artificial Intelligence.
+The main objective of the Adaptive Gamer Coaching System is to build an intelligent behavioral analytics platform that monitors, analyzes, and visualizes gamer behavior using machine learning.
 
----
+It helps gamers, coaches, and gaming communities to:
 
-## 🚀 Easy Setup Guide (Beginner Friendly)
+• Predict rage-quitting behavior before emotional breakdown occurs
 
-To run this project, you need to open **TWO terminal windows** side-by-side.
+• Identify gaming addiction risk through behavioral and psychological indicators
 
-### 1. Clone the Project
-Open your first terminal and paste this:
-```bash
-git clone https://github.com/Butcherboy7/adaptive-gamer-coach.git
-cd adaptive-gamer-coach
-```
+• Differentiate between healthy competitive gaming and unhealthy gaming patterns
 
----
+• Provide personalized coaching recommendations for mental wellness and performance improvement
 
-### 2. Start the Backend (The AI Engine)
-**In Terminal 1**, run these commands:
+• Promote responsible gaming habits and long-term player sustainability
 
-1. **Install the tools:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Start the server:**
-   ```bash
-   python backend/main.py
-   ```
-*✅ **What to look for:** You should see a message saying `SUCCESS: All models loaded successfully`.*
+**TECH STACK**
 
----
+**Frontend:** React.js + Vite (Interactive Dashboard UI)
 
-### 3. Start the Frontend (The Visual Dashboard)
-**Open a NEW terminal (Terminal 2)**, go to the project folder, and run:
+**Backend:** FastAPI (REST API and Model Inference)
 
-1. **Enter the frontend folder:**
-   ```bash
-   cd frontend
-   ```
-2. **Install the visual tools:**
-   ```bash
-   npm install
-   ```
-3. **Launch the dashboard:**
-   ```bash
-   npm run dev
-   ```
-*✅ **What to look for:** A link will appear (e.g., http://localhost:5173). **Ctrl + Click** that link to open your dashboard!*
+**Machine Learning:** Scikit-Learn
 
----
+Models Used:
 
-## 🎮 How to use the Dashboard
+• Random Forest Classifier
 
-1.  **Manual Mode**: Use the sliders to adjust your stats (Stress, Sleep, etc.).
-2.  **Riot Search**: Click the toggle at the top and type a name like `TenZ#NA1` or `Shroud#EUW`. 
-3.  **Analyze**: Hit the big neon **ANALYZE PLAYER** button at the bottom to see your AI-generated coaching tips!
+• Gradient Boosting Classifier
 
----
+**Data Processing:**
 
-## 🛠️ It's Not Working? (Quick Fixes)
+• Pandas
 
--   **"Command not found: pip"**: Try typing `pip3` or `python -m pip` instead.
--   **"Port 8000 is in use"**: This means the server is already running! You can just refresh your browser.
--   **"Models not loaded"**: If you see an error about missing files, make sure you are in the `adaptive-gamer-coach` root folder.
+• NumPy
 
----
+**Visualization:**
 
-## 🎓 Academic Attribution
-**Course**: GRIET Data Science - Review 3  
-**Research**: Predicting Gamer Burnout via Behavioral Modeling  
-**Project Lead**: Butcherboy7  
+• Risk Gauges
+
+• Behavioral Radar Charts
+
+• Trend Graphs
+
+• Interactive Analytics Dashboard
+
+**Dataset:**
+
+Global Gaming Mental Health Survey (Kaggle)
+
+**Deployment:**
+
+GitHub, Local Development Environment
+
+
+
+**STEPS INCLUDED**
+
+
+**1. Data Collection**
+
+Behavioral and psychological gaming data is collected from the Global Gaming Mental Health Survey dataset.
+
+Collected attributes include:
+
+• Daily gaming hours
+
+
+• Weekly sessions
+
+
+• Session duration
+
+• Night-time gaming ratio
+
+• Stress levels
+
+
+• Sleep duration
+
+• Failure streaks
+
+
+• Retry frequency
+
+• Anxiety scores
+
+• Depression scores
+
+
+
+
+
+
+**2. Data Pre-processing**
+
+Raw gaming data is cleaned and structured.
+
+
+Processing includes:
+
+• Missing value handling
+
+• Duplicate removal
+
+• Outlier correction
+
+
+• Feature normalization
+
+• Categorical encoding
+
+Additional behavioral features are engineered:
+
+
+• Gaming Intensity Score
+
+• Emotional Stability Index
+
+• Recovery Efficiency Score
+
+
+
+**3. Model Training and Classification**
+
+Machine learning models are trained using processed behavioral data.
+
+
+Rage-Quit Prediction:
+
+Random Forest Classifier
+
+Analyzes:
+
+• Losing streaks
+
+• Retry behavior
+
+
+• Performance instability
+
+
+• Stress patterns
+
+Addiction Risk Prediction:
+
+Gradient Boosting Classifier
+
+
+
+Analyzes:
+
+• Gaming hours
+
+
+• Sleep disruption
+
+
+• Session consistency
+
+• Long-term gaming habits
+
+Predictions are classified as:
+
+
+• Low Risk
+
+• Medium Risk
+
+• High Risk
+
+
+
+
+**4. Dashboard Integration**
+
+Behavioral predictions are integrated into an interactive dashboard.
+
+
+
+The dashboard displays:
+
+• Manual Input Module
+
+• Rage-Quit Risk Dashboard
+
+• Addiction Risk Dashboard
+
+• Behavioral Profile Visualization
+
+
+• Coaching Recommendation Panel
+
+
+
+**5. User Interaction**
+
+
+Users can:
+
+• Input behavioral data
+
+• Analyze personal gaming habits
+
+
+• View emotional trends
+
+• Monitor risk levels
+
+• Track wellness metrics
+
+• Receive personalized coaching tips
+
+
+
+
+**6. Recommendation System**
+
+
+Based on behavioral analysis, the system generates adaptive recommendations such as:
+
+
+• Take a short break
+
+• Stay hydrated
+
+• Switch to practice mode
+
+• Avoid late-night sessions
+
+
+• Maintain sleep consistency
+
+• Reduce stress exposure
+
+• Improve social interaction
+
+
+
+**7. Future API Integration**
+
+The system is designed for future integration with Riot Games APIs.
+
+Future real-time features include:
+• Live match tracking
+
+• Session monitoring
+
+• Real-time emotional prediction
+
+• Performance coaching
+
+• Automatic wellness alerts
+
+
+
+**VISUALIZATION INCLUDED**
+
+
+The system includes interactive visual analytics such as:
+
+• Rage-Quit Risk Gauge
+
+• Addiction Trend Graph
+
+• Behavioral Radar Chart
+• Coaching Recommendation Dashboard
+
+Behavioral dimensions visualized:
+
+• Stress
+
+• Anxiety
+• Isolation
+
+• Gaming intensity
+
+• Sleep risk
+
+• Social interaction
+
+
+**ANALYSIS INCLUDED**
+
+The system performs behavioral analysis including:
+
+• Rage-quitting prediction
+
+• Gaming addiction classification
+
+• Emotional instability detection
+
+• Sleep pattern analysis
+
+• Stress and anxiety evaluation
+
+• Behavioral baseline comparison
+
+• Competitive vs addictive behavior differentiation
+
+**KEY INSIGHTS**
+
+The platform provides insights such as:
+
+• Early signs of emotional burnout
+
+• Frustration triggers caused by repeated failures
+
+• Sleep disruption caused by excessive gaming
+
+• Long-term addiction tendencies
+
+• Social isolation indicators
+
+• Recovery and emotional resilience patterns
+
+**KEY FEATURES**
+
+• Behavioral Prediction Engine
+
+• Emotional Profiling
+
+• Coaching Recommendation System
+
+• Interactive Dashboard
+
+• Risk Trend Monitoring
+
+• Modular Architecture
+
+• Scalable AI Framework
+
+**ACADEMIC USE**
+
+Course: Data Science Major Project
+
+Institution: Gokaraju Rangaraju Institute of Engineering and Technology
+
+Department: Department of Data Science
+
+Researchers:
+
+• Kanchari Neeharika
+
+• Konduri Sirisha
+
+• Male Sreeja
+
+
